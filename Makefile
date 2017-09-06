@@ -1,7 +1,7 @@
-all: infgen infgen/infgen column0.txt 
+all: infgen/Makefile infgen/infgen column0.txt 
 
-infgen:
-	git submodule update --recursive --remote
+infgen/Makefile:
+	git submodule update --init --recursive
 
 column0.txt: prices0.txt
 	python double-plain.py
